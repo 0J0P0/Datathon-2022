@@ -54,11 +54,8 @@ def get_attributes_driver(driver: Driver) -> dict:
     return {'type': 'driver', 'id': driver.id, 'pos': driver.pos, 'inout': (driver.input)}
 
 
-def add_nodes_and_edges(paths: List[Path]) -> None:
-    """Adds all the nodes (both pins and drivers) and all the edges to 
-    the graph PathGraph."""
-
-    # Addition of nodes.
+def add_nodes(paths: List[Path]) -> None:
+    """Adds the nodes to the graph PathGraph. """
     for path in paths:
         # Drivers nodes.
         att1: dict = get_attributes_driver(path.dri_in)
@@ -83,7 +80,9 @@ def add_nodes_and_edges(paths: List[Path]) -> None:
                 att6: dict = get_attributes_aux_nodes(pos3)
                 PathGraph.add_node(pos3, **att6)
 
-    # add the edges
+
+def add_edges(paths) -> None: 
+    """Adds the edges to the graph PathGraph. """
     for path in paths:
         # Drivers edges.
         edge1 = (path.pins[0].pos[0], path.dri_in.pos[1])
@@ -96,5 +95,18 @@ def add_nodes_and_edges(paths: List[Path]) -> None:
         # Pins edges.
         for i in range(len(path.pins)-1):
             edge3 = (path.pins[i+1].pos[0], path.pins[i].pos[1])
-            PathGraph.add_edge(path.pins[i].pos, edge3)
-            PathGraph.add_edge(edge3, path.pins[i+1].pos)
+            if (path.pins[i].pos != edge3):
+                PathGraph.add_edge(path.pins[i].pos, edge3)
+            if (edge3 != path.pins[i+1].pos):
+                PathGraph.add_edge(edge3, path.pins[i+1].pos)
+
+
+def add_nodes_and_edges(paths: List[Path]) -> None:
+    """Adds all the nodes (both pins and drivers) and all the edges to 
+    the graph PathGraph."""
+
+    # Addition of nodes.
+    add_nodes(paths) 
+
+     # Addition of  edges
+    add_edges(paths)
