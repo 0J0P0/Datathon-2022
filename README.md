@@ -3,7 +3,8 @@
 ## Introduction
 We are four students who are studying data science in UPC.
 The problem that we have chosen is about 
-To create a chip, we have to deliver the power to all the pins, but we have to do this the f
+To create a chip, we have to deliver the power to all the pins, but we have to do this the fastest possible (minimisize the time). Moreover each path of pins must have a similar
+lenght, thus we have to minimisize standard desviation.
 
 ## Description of the algorithm
 The algorithm which we have build consists in the following steps:
