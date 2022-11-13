@@ -1,4 +1,6 @@
 # Datathon-2022
+
+## Description of the algorithm
 The algorithm which we have build consists in the following steps:
 - Fisrt of all, we sort drivers by y-axis and pins by x-axis.
 - Then we call a function whose name is "gen" that it is the main function in our algorithm. This function is composed by 3 parts:
