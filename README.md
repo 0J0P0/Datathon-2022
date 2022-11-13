@@ -1,6 +1,4 @@
 # Datathon-2022
-# Functionalities
-The 'main.py' calls the rest of the modules to execute the program
 
 ## Introduction
 We are four second-year students studying _Data Science and Engineering_ in UPC.
@@ -50,6 +48,10 @@ class Path:
     dri_in: Optional[Driver]
     dri_out: Optional[Driver]
 ```
+
+### Excecution
+
+.....................................................................................
 
 ### Specification of the Algorithm
 
