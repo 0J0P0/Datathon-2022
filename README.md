@@ -36,7 +36,7 @@ The algorithm which we have build consists in the following steps:
     ```
     Each residual Pin is connected to a Path in ascending order.
 
-- We end up with the same number of Paths as Drivers, so we need to connect a Path starting with a input Diver with a Path starting with a output Driver, using the `path_union` function.
-```python3
-def path_union(paths: List[Path]) -> List[Path]:
-```
+    - We end up with the same number of Paths as Drivers, so we need to connect a Path starting with a input Diver with a Path starting with a output Driver, using the `path_union` function.
+    ```python3
+    def path_union(paths: List[Path]) -> List[Path]:
+    ```
