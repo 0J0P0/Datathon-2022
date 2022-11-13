@@ -8,12 +8,11 @@ lenght, thus we have to minimisize standard desviation.
 
 ## Description of the algorithm
 The algorithm which we have build consists in the following steps:
-- Fisrt of all, we sort drivers by y-axis and pins by x-axis.
 - Then we call the `gen` function
     ```python3
     def gen(lpin: List[Pin], ldri: List[Driver]) -> List[Path]:
     ```
-   that it is the main function in our algorithm. This function is composed by 3 parts:
+   that it is the main function in our algorithm. Fisrt of all, we sort drivers by y-axis and pins by x-axis. This function is composed by 3 parts:
   - Function 
     ```python3
     def gen_base(lpath: List[Path], lpins: List[Pin], ldri: List[Driver]) -> None:
