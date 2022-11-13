@@ -12,6 +12,45 @@ From our point of view, we are trying to:
 
 
 ## Description of the algorithm
+
+### Definition of Data Types
+
+Our definition of a Driver, Pin and Path states as follows:
+```python3
+Coord: TypeAlias = Tuple[float, float]
+
+
+@dataclass
+class Driver:
+    """Class definition of a Driver. Each driver has a unique id and a boolean variable
+    specifing if it's an input or output Driver, along other attributes."""
+    id: int
+    name: str
+    input: bool
+    pos: Coord
+
+
+@dataclass
+class Pin:
+    """Class definition of a Pin. Each driver has a unique id, along other attributes."""
+    id: int
+    name: str
+    pos: Coord
+
+
+@dataclass
+class Path:
+    """Class definition of a Path. A path consists of a list of Pins, the first one 
+    connected with an input Driver (dri_in) and the last Pin connected with an output
+    Driver (dri_out)."""
+    id: int
+    pins: List[Pin]
+    dri_in: Optional[Driver]
+    dri_out: Optional[Driver]
+```
+
+### Specification of the Algorithm
+
 The algorithm which we have build consists in the following steps:
 - The main function `gen`
     ```python3
