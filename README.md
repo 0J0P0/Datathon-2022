@@ -3,8 +3,12 @@
 ## Description of the algorithm
 The algorithm which we have build consists in the following steps:
 - Fisrt of all, we sort drivers by y-axis and pins by x-axis.
-- Then we call a function whose name is "gen" that it is the main function in our algorithm. This function is composed by 3 parts:
-  - Function "gen_base": this function join each driver (does not matter if is an input or output driver) with the first pin (we sort the pins by y-axis). 
+- Then we call the `gen` function
+    ```python3
+    def gen(lpin: List[Pin], ldri: List[Driver]) -> List[Path]:
+    ```
+-   that it is the main function in our algorithm. This function is composed by 3 parts:
+  - Function `gen_base`: this function join each driver (does not matter if is an input or output driver) with the first pin (we sort the pins by y-axis). 
   As we have the pins sorted by y-axis and the drivers too we join the lower driver with the lower pin
   - Function "gen_blog": we join the following pins, manteining this criterion doing it by groups until we arrive at the last pin, since we can find
   a lenght of pins lower than the the lenght of the groups. So we have cretaed a function to treat this case.
