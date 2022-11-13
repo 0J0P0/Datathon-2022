@@ -10,7 +10,8 @@ def path_union(paths: List[Path]) -> List[Path]:
     Returns the final list of paths and the total Manhattan distance."""
 
     in_paths: List[Path] = [path for path in paths if path.dri_in is not None]
-    out_paths: List[Path] = [path for path in paths if path.dri_out is not None]
+    out_paths: List[Path] = [
+        path for path in paths if path.dri_out is not None]
 
     unified_paths: List[Path] = []
     id: int = 0
@@ -72,10 +73,10 @@ def gen(lpin: List[Pin], ldri: List[Driver]) -> List[Path]:
     assert(len(slpin) >= len(sldri))
     gen_base(lpath, sort_pins_y(slpin[0: 32]), sldri)
 
-    for i in range(32, len(slpin)-32, 32):
+    i = 32
+    while i + 32 < len(slpin):
         gen_bloc(lpath, sort_pins_y(slpin[i: i+32]))
+        i += 32
 
-    j: int = len(slpin) % 32
-    gen_fin(lpath, sort_pins_y(slpin[len(slpin)-j: len(slpin)]))
+    gen_fin(lpath, sort_pins_y(slpin[i:]))
     return path_union(lpath)
-
