@@ -20,6 +20,10 @@ The algorithm which we have build consists in the following steps:
     ```
     we join the following pins, manteining this criterion doing it by groups until we arrive at the last pin, since we can find
     a lenght of pins lower than the the lenght of the groups. So we have cretaed a function to treat this case.
-  - Function "gen_fin": Finally, as we hace the residual pins sorted by the y-axis, we only join the first "last pint" with the residual pins.
+  - Function
+    ```python3
+    def gen_fin(lpath: List[Path], lpin: List[Pin]) -> None:
+    ```
+    Finally, as we hace the residual pins sorted by the y-axis, we only join the first "last pint" with the residual pins.
 - Finally, we have to join each path of pins with their drivers, so as at the beginning we have selected all the drivers, we did not know which drivers were
 input drivers or output dirvers, so now we have to prove if we are joining an input driver with an output driver.
