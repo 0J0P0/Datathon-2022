@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 PathGraph: TypeAlias = nx.Graph()
 
 
-def paint_nodes_and_show() -> None:
+def paint_nodes_and_show(file_name: str) -> None:
     """Paints the nodes and the edges of the paths and displays 
     the paths in an interactive screen."""
     
@@ -33,7 +33,7 @@ def paint_nodes_and_show() -> None:
             node_size=node_sizes, with_labels=False, node_shape="s")
 
     nx.draw_networkx_labels(PathGraph, nx.get_node_attributes(PathGraph, 'pos'), labels, font_size=10)
-    plt.show()
+    plt.savefig(file_name)
 
 
 def get_attributes_pin(pin: Pin) -> dict:

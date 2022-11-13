@@ -72,7 +72,7 @@ def gen(lpin: List[Pin], ldri: List[Driver]) -> List[Path]:
     assert(len(slpin) >= len(sldri))
     gen_base(lpath, sort_pins_y(slpin[0: 32]), sldri)
 
-    for i in range(32, len(slpin), 32):
+    for i in range(32, len(slpin)-32, 32):
         gen_bloc(lpath, sort_pins_y(slpin[i: i+32]))
 
     j: int = len(slpin) % 32

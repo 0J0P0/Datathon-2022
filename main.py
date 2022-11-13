@@ -15,8 +15,9 @@ def main():
         paths = gen(lpin, ldri)
         write_output(paths, './solCases/output' + str(ntest) + '.def')
         ntest += 1
-        #add_nodes_and_edges(paths)
-        #paint_nodes_and_show()
+        add_nodes_and_edges(paths)
+        paint_nodes_and_show('./solCases/output_img' + str(ntest) + '.png')
+        print('si', ntest)
 
 
 if __name__ == '__main__':
