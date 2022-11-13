@@ -3,6 +3,9 @@ from read_write import *
 import matplotlib.pyplot as plt
 
 
+"""Modul containing the functions that creates a Graph with the solutions of 
+the paths and saves the graph in an .png image."""
+
 PathGraph: TypeAlias = nx.Graph()
 
 
