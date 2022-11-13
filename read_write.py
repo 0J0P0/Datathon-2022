@@ -49,6 +49,7 @@ def sort_drivers_y(drivers: List[Driver]) -> List[Driver]:
 
 
 def write_connection(v1: str, v2: str, filename: str) -> None:
+    """Writes each connection of a path in the especified format."""
     filename.write("- BOGUS NET NAME \n")
     filename.write("  ( " + v1 + " conn_in ) \n")
     filename.write("  ( " + v2 + " conn_out )\n")

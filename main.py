@@ -8,7 +8,7 @@ def main():
     for test in ['priv_testcase0.def', 'priv_testcase1.def', 'priv_testcase2.def', 'priv_testcase3.def']:
         ldri, lpin = read_input(test, './testCases/')
         paths = gen(lpin, ldri)
-        write_output(paths, './solCases/output' + str(ntest) + '.def')
+        write_output(paths, './solCases/output' + str(ntest) + '.0.def')
         ntest += 1
         add_nodes_and_edges(paths)
         paint_nodes_and_show('./solCases/output_img' + str(ntest) + '.png')
