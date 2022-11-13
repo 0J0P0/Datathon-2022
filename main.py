@@ -3,6 +3,11 @@ from algorisme import *
 from read_write import *
 
 
+"""
+Main modul. For each selected input file, finds the most optimal solution of paths, writes
+the paths as the desired format in an output file and creates an image visualizing the path solutions.
+"""
+
 def main():
     ntest: int = 0
     for test in ['priv_testcase0.def', 'priv_testcase1.def', 'priv_testcase2.def', 'priv_testcase3.def']:
