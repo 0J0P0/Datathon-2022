@@ -8,7 +8,8 @@ The algorithm which we have build consists in the following steps:
     def gen(lpin: List[Pin], ldri: List[Driver]) -> List[Path]:
     ```
    that it is the main function in our algorithm. This function is composed by 3 parts:
-  - Function ```python3
+  - Function 
+    ```python3
    def gen_base(lpath: List[Path], lpins: List[Pin], ldri: List[Driver]) -> None:
     ```
     this function join each driver (does not matter if is an input or output driver) with the first pin (we sort the pins by y-axis). 
