@@ -4,11 +4,18 @@ from typing_extensions import TypeAlias
 from typing import List, Tuple, Optional
 
 
+"""
+Modul with definitions of classes and functions for read and write from .def files.
+In addition with extra functions for sorting list of Drivers and Pins.
+"""
+
 Coord: TypeAlias = Tuple[float, float]
 
 
 @dataclass
 class Driver:
+    """Class definition of a Driver. Each driver has a unique id and a boolean variable
+    specifing if it's an input or output Driver, along other attributes."""
     id: int
     name: str
     input: bool
@@ -17,6 +24,7 @@ class Driver:
 
 @dataclass
 class Pin:
+    """Class definition of a Pin. Each driver has a unique id, along other attributes."""
     id: int
     name: str
     pos: Coord
@@ -24,6 +32,9 @@ class Pin:
 
 @dataclass
 class Path:
+    """Class definition of a Path. A path consists of a list of Pins, the first one 
+    connected with an input Driver (dri_in) and the last Pin connected with an output
+    Driver (dri_out)."""
     id: int
     pins: List[Pin]
     dri_in: Optional[Driver]
@@ -80,17 +91,15 @@ def read_input(file_name: str, path_name: str = './') -> Tuple[List[Driver], Lis
     with open(os.path.join(path_name, file_name)) as file:
         for _, line in enumerate(file):
             line_str = line.split()
-            if len(line_str) and line_str[0] == '-':  # driver line
-                driver = Driver(id_driver, line_str[1], bool(
-                    line_str[7] == 'INPUT'), [0, 0])
+            if len(line_str) and line_str[0] == '-':  # Driver line.
+                driver = Driver(id_driver, line_str[1], bool(line_str[7] == 'INPUT'), tuple([0, 0]))
                 drivers.append(driver)
-            elif len(line_str) > 1 and line_str[1] == 'FIX':  # driver coordinates
+            elif len(line_str) > 1 and line_str[1] == 'FIX':  # Driver coordinates.
                 drivers[id_driver].pos = tuple(
                     [float(line_str[3]), float(line_str[4])])
                 id_driver += 1
-            elif len(line_str) > 1 and line_str[-1] == 'N;':  # pin line
-                pin = Pin(id_pin, line_str[0], tuple(
-                    [float(line_str[5]), float(line_str[6])]))
+            elif len(line_str) > 1 and line_str[-1] == 'N;':  # Pin line.
+                pin = Pin(id_pin, line_str[0], tuple([float(line_str[5]), float(line_str[6])]))
                 pins.append(pin)
                 id_pin += 1
 
