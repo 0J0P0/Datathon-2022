@@ -1,10 +1,13 @@
 # Datathon-2022
 
 ## Introduction
-We are four students who are studying data science in UPC.
-The problem that we have chosen is about 
-To create a chip, we have to deliver the power to all the pins, but we have to do this the fastest possible (minimisize the time). Moreover each path of pins must have a similar
-lenght, thus we have to minimisize standard desviation.
+We are four second-year students studying _Data Science and Engineering_ in UPC.
+We have chosen the [Qualcomm challenge](https://github.com/data-students/datathonfme2022/tree/main/qualcomm_challenge) of the Datathon.
+
+From our point of view, we are trying to:
+- Create a chip, in which we have to deliver the power to all the pins in the fastest way possible (minimize the time).
+- Find paths of pins that, ideally have a similar lenght, thus we try to minimize the standard desviation of the pins in the path.
+
 
 ## Description of the algorithm
 The algorithm which we have build consists in the following steps:
@@ -12,7 +15,9 @@ The algorithm which we have build consists in the following steps:
     ```python3
     def gen(lpin: List[Pin], ldri: List[Driver]) -> List[Path]:
     ```
-   that it is the main function in our algorithm. Fisrt of all, we sort drivers by y-axis and pins by x-axis. This function is composed by 3 parts:
+   that it is the main function in our algorithm. Fisrt of all, we sort drivers by y-axis and pins by x-axis.
+   
+   This function is composed by 3 parts:
   - Function 
     ```python3
     def gen_base(lpath: List[Path], lpins: List[Pin], ldri: List[Driver]) -> None:
