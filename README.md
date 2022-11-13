@@ -18,8 +18,8 @@ From our point of view, we are trying to:
 Our definition of a Driver, Pin and Path states as follows:
 ```python3
 Coord: TypeAlias = Tuple[float, float]
-
-
+```
+```python3
 @dataclass
 class Driver:
     """Class definition of a Driver. Each driver has a unique id and a boolean variable
@@ -28,16 +28,16 @@ class Driver:
     name: str
     input: bool
     pos: Coord
-
-
+```
+```python3
 @dataclass
 class Pin:
     """Class definition of a Pin. Each driver has a unique id, along other attributes."""
     id: int
     name: str
     pos: Coord
-
-
+```
+```python3
 @dataclass
 class Path:
     """Class definition of a Path. A path consists of a list of Pins, the first one 
