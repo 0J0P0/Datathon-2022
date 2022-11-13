@@ -1,5 +1,10 @@
 # Datathon-2022
 
+## Introduction
+We are four students who are studying data science in UPC.
+The problem that we have chosen is about 
+To create a chip, we have to deliver the power to all the pins, but we have to do this the f
+
 ## Description of the algorithm
 The algorithm which we have build consists in the following steps:
 - Fisrt of all, we sort drivers by y-axis and pins by x-axis.
