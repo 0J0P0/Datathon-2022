@@ -7,12 +7,7 @@ from read_write import *
 
 def main():
     ldri, lpin = read_input('inputs.def')
-    lpath = gen(sort_pins_x(lpin), ldri)
-    
-    npins = 0
-    for path in lpath:
-        npins += len(path.pins)
-    print('Numero total de pins', npins, len(lpin))
+    lpath = gen(lpin, ldri)
 
     ntest: int = 0
     for test in ['testcase0.def', 'testcase1.def', 'testcase2.def', 'testcase3.def', 'testcase4.def']:
